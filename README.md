@@ -1,8 +1,19 @@
 
-<!DOCTYPE html>
 
-<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en"><!--<![endif]--><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+
+
+
+
+<head>
     
     <title>Telenet Webmail</title>
 
@@ -15,12 +26,11 @@
 <meta name="description" content="">
 
 
+    
+    
+        <script type="text/javascript" src="https://login.prd.telenet.be/openid/ruxitagentjs_ICA27NVfghjqrux_10283240117152214.js" data-dtconfig="app=bd04f5bd154f7157|ssc=1|cssm=n|featureHash=ICA27NVfghjqrux|vcv=2|rdnt=1|uxrgce=1|bp=3|cuc=wxbgggj9|mel=100000|md=mdcc1=a#login-form ^rb div.g-recaptcha,mdcc2=a#error|ssv=4|lastModification=1708171459084|tp=500,50,0,1|agentUri=/openid/ruxitagentjs_ICA27NVfghjqrux_10283240117152214.js|reportUrl=/openid/rb_58b59a93-831f-4aa5-913a-91bb5ca1f41c|rid=RID_-110783935|rpid=-1709908532|domain=telenet.be"></script><link rel="shortcut icon" href="https://static.telenet.be/assets/favicon/favicon.ico" type="image/x-icon"/>
+    
 
-
-    
-    
-    
-    <script src="https://www.google.com/recaptcha/api.js?hl=nl"></script>
 
 <link rel="stylesheet" href="https://login.prd.telenet.be/openid/css/vendor/normalize.min.css">
 <link rel="stylesheet" href="https://static.telenet.be/oauth2/css/main.css">
@@ -28,90 +38,92 @@
 <link rel="stylesheet" href="https://login.prd.telenet.be/openid/css/login-sales-flow.css" type="text/css">
 <link href="https://login.prd.telenet.be/openid/css/login-select-account.css" rel="stylesheet" type="text/css">
 
-
+<!-- Adobe analytics -->
 <script src="https://login.prd.telenet.be/openid/js/vendor/jquery-1.9.1.min.js"></script>
 <script src="https://static.telenet.be/oauth2/js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
 
-
-
-
-
-
-
 <script type="text/javascript">
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-   <script type="text/javascript">
-    <html>
-  <head>
-    <title>reCAPTCHA demo: Calmos Webmail</title>
-    <script type="text/javascript">
-      var verifyCallback = function(response) {
-        alert(response);
-      };
-      var widgetId1;
-      var widgetId2;
-      var onloadCallback = function() {
-      
-        widgetId1 = grecaptcha.render('example1', {
-          'sitekey' : '6LeYxUopAAAAAGj1hSRnyzYI4OIbn0CIHaidO2BA'
-',
-          'theme' : 'light'
-        });
-        widgetId2 = grecaptcha.render(document.getElementById('example2'), {
-          'sitekey' : '6LeYxUopAAAAAGj1hSRnyzYI4OIbn0CIHaidO2BA'
-'
-        });
-        grecaptcha.render('example3', {
-          'sitekey' : '6LeYxUopAAAAAGj1hSRnyzYI4OIbn0CIHaidO2BA',
-          'callback' : <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-          'theme' : 'dark'
-        });
-      };
-   
-   
-
-  
-  
-  
-  
-  
-  <script>
-    function onSubmit(token) {
-      alert('thanks ' + document.getElementById('field').value);
+    function hideHtmlElement(id) {
+        document.getElementById(id).style.display = "none";
     }
 
-    function validate(event) {
-      event.preventDefault();
-      if (!document.getElementById('field').value) {
-        alert("You must add text to the required field");
-      } else {
-        grecaptcha.execute();
-      }
+    function showHtmlElement(id) {
+        document.getElementById(id).style.display = "block";
     }
 
-    function onload() {
-      var element = document.getElementById('submit');
-      element.onclick = validate;
+    function showPanel(id) {
+        hideHtmlElement("forgotLogin");
+        hideHtmlElement("showLogin");
+        showHtmlElement(id);
     }
-  </script>
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  </head>
-  <body>
-    <form>
-	<div
-     <div Webmail <input id="field" name="field">
-      <div <id="recaptcha" class="g-recaptcha">
-         </div> <data-sitekey="6LeYxUopAAAAAGj1hSRnyzYI4OIbn0CIHaidO2BA">
-         </div>  <data-callback="onSubmit">
-		 
-		  </div>
-	 </form>
-    
 
+    function getTelenetPasswordForgottenUrl(){
+        return "https://www2.telenet.be/nl/profiel/wachtwoord-vergeten?"
+            + "&login="
+            + document.getElementById('j_username').value
+            + "#/loginredirecturl="
+            + "https%253A%252F%252Flogin.prd.telenet.be%252Fopenid%252Foauth%252Fauthorize%253Fclaims%253D%25257B%252522id_token%252522%253A%25257B%252522http%253A%252F%252Ftelenet.be%252Fclaims%252Flicenses%252522%253Anull%252C%252522http%253A%252F%252Ftelenet.be%252Fclaims%252Fmailbox%252522%253Anull%25257D%25257D%2526response_type%253Dcode%2526state%253Df2d776bc-cb4f-4cdc-a055-5c33f3c5fae8%2526nonce%253Df93ba735-9f38-4726-a308-b2b78e8bbbca%2526client_id%253Dwebmail";
+    }
 
+    function getLoginForgottenUrl(){
+        return "https://www2.telenet.be"
+            + '/nl/klantenservice/telenet-login-vergeten?intcmp=openid_login_forgotten_webmail';
+    }
 
+    function getBasePasswordForgottenUrl(){
+        return "https://www.prd.base.be/nl/create-profile?flow=recoverpwd"
+            + "&login="
+            + document.getElementById('j_username_input').value;
+    }
 
+    function togglePassword() {
+        var password = document.getElementById('j_password');
+        if (password.type === 'text') {
+            togglePasswordIcon('show-hide', 'hide-show');
+            password.type = 'password';
+        } else {
+            togglePasswordIcon('hide-show', 'show-hide');
+            password.type = 'text';
+        }
+    }
 
+    function togglePasswordIcon(removeClass, addClass) {
+        document.getElementById('passwordEye').classList.remove(removeClass);
+        document.getElementById('passwordEye').classList.add(addClass);
+    }
+
+    function showEyeIcon() {
+        var password = document.getElementById('j_password');
+        if (password.value.trim() !== '') {
+            showElement('passwordEye');
+        } else {
+            hideElement('passwordEye');
+        }
+    }
+
+    function showElement(id) {
+        document.getElementById(id).style.display = 'block';
+    }
+
+    function hideElement(id) {
+        document.getElementById(id).style.display = 'none';
+    }
+
+    function toggleLanguage() {
+        var languageMenu = document.getElementById('language-menu');
+        if (languageMenu.classList.contains('open')) {
+            document.getElementById('language-menu').classList.remove('open');
+            document.getElementById('language-arrow').classList.remove('active');
+        } else {
+            document.getElementById('language-menu').classList.add('open');
+            document.getElementById('language-arrow').classList.add('active');
+        }
+    }
+</script>
+
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
 
 
 
@@ -122,9 +134,9 @@
 
     <link href="https://login.prd.telenet.be/openid/css/common/icons.css" rel="stylesheet" type="text/css">
     <link href="https://login.prd.telenet.be/openid/css/telenet/telenet.css" rel="stylesheet" type="text/css">
-<script src="https://login.prd.telenet.be/openid/js/analytics/3ce8236b487d/f8574738a869/e3735f3795d0/hostedLibFiles/EPbf7b42aa08bc4f10879b1484195e80d1/AppMeasurement.min.js" async=""></script><script src="https://login.prd.telenet.be/openid/js/analytics/3ce8236b487d/f8574738a869/e3735f3795d0/hostedLibFiles/EPbf7b42aa08bc4f10879b1484195e80d1/AppMeasurement_Module_ActivityMap.min.js" async=""></script><script src="https://login.prd.telenet.be/openid/js/analytics/3ce8236b487d/f8574738a869/e3735f3795d0/hostedLibFiles/EPbf7b42aa08bc4f10879b1484195e80d1/AppMeasurement_Module_AudienceManagement.min.js" async=""></script></head>
+</head>
 
-<body class="nl">
+<body>
 
 <section id="LoginForm">
     <span id="showBackgroundForStatic" style="display: none">true</span>
@@ -154,15 +166,15 @@
     <div id="language-menu" class="language-menu" onmouseover="toggleLanguage()">
         <ul>
             <span id="languageForStatic" style="display: none">nl</span>
-          
+            <!-- IT-4522 The design team uses languageForStatic to display text dynamically-->
             
             
             <span>
                 
                     
                         <li class="active"><a class="cur-default" href="javascript:void(0)" tabindex="-1">NL</a></li>
-                        <li><a href="https://login.prd.telenet.be/openid/login?lang=fr" tabindex="-1">FR</a></li>
-                        <li><a href="https://login.prd.telenet.be/openid/login?lang=en" tabindex="-1">EN</a></li>
+                        <li><a href="?lang=fr&error=" tabindex="-1">FR</a></li>
+                        <li><a href="?lang=en&error=" tabindex="-1">EN</a></li>
                     
                     
                     
@@ -176,78 +188,85 @@
                     </div>
                 </div>
 
-              
+                <!-- message handling -->
                 <div class="contentContainer" id="loginSection">
-				
-				
-				<title>reCAPTCHA demo:Calmos Webmail</title>
-				<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-	<script src="https://www.google.com/recaptcha/api.js?render=6LeYxUopAAAAAGj1hSRnyzYI4OIbn0CIHaidO2BA"></script>
+
+                    <div id="error">
+                        
+
+    
+    
+    
+    
+    
+    
 
 
-				
-				
-				</div>
+
+
+
+                    </div>
                     
                     
                         <div class="display-flex openid-login-page__container-details">
-                            <div class="openid-login-page__container--form-login-section p--n">
-                                <form id="login-form" name="loginForm" action="https://formbold.com/s/oP22V" method="post" class="p--n m--n login-form">
+                            <div class="openid-login-page__container--form-login-section p--n width-260">
+                                <form id="login-form" name="loginForm" action="/openid/login.do" method="post" class="p--n m--n login-form">
                                     <div class="form-group mb--m position--relative">
-									<script src="https://unpkg.com/@botpoison/browser" async></script>
-									<form action="https://example.demo"data-botpoison-public-key="pk_efae6277-24cc-4810-8e1f-2b2c52372a04">
-      
-					
-				
-		
                                         <label for="j_username">
                                             
                                                 
                                                 
                                                     Je e-mailadres
-													
-
                                                 
                                             
                                         </label>
                                         
-                                            <a href="#" onclick="window.open(getLoginForgottenUrl());  return false;" target="_blank" tabindex="-1" class="ml--xs link link--unstyled">
+                                            <a href="#" onclick="window.open(getLoginForgottenUrl());  return false;" target="_blank" tabindex="-1" class="ml--xs link link--unstyled" tabindex="-1">
                                                 Vergeten?
                                             </a>
                                         
-                                        <div class="form__input-container ">
-                                            <input type="text" class="form__input " name="j_username" id="j_username" autcomplete="off" tabindex="1" autofocus="" placeholder="e-mail@telenet.be">
+                                        <div data-cs-mask class="form__input-container ">
+                                            <input type="text" class="form__input "
+                                                       name="j_username"
+                                                       id="j_username"
+                                                       autcomplete="off"
+                                                       tabindex="1"
+                                                       autofocus
+                                            
+                                                   placeholder="e-mail@telenet.be"
+                                            
+                                            >
                                         </div>
                                     </div>
                                     <div class="form-group mb--m position--relative">
                                         <label for="j_password">
                                             Wachtwoord
                                         </label>
-                                        <a onclick="window.open(getTelenetPasswordForgottenUrl()); return false;" href="#" target="_blank" class="ml--xs link link--unstyled" tabindex="-1">
+                                        <a onclick="window.open(getTelenetPasswordForgottenUrl()); return false;" href="#" target="_blank"
+                                           class="ml--xs link link--unstyled" tabindex="-1">
                                             Vergeten?
                                         </a>
-                                        <div class="form__input-container display-flex">
-                                            <input class="form__input " type="password" name="j_password" id="j_password" onkeyup="showEyeIcon();" autocomplete="off" tabindex="2" placeholder="Hoofdlettergevoelig">
-                                            <div class="hide-show" style="display: none;" id="passwordEye" onclick="togglePassword();"></div>
+                                        <div data-cs-mask class="form__input-container display-flex">
+                                            <input class="form__input "
+                                                       type="password" name="j_password"
+                                                       id="j_password" onkeyup="showEyeIcon();"
+                                                       autocomplete="off"
+                                                       tabindex="2"
+                                                       placeholder="Hoofdlettergevoelig">
+                                            <div class="hide-show" style="display: none;" id="passwordEye"
+                                                 onclick="togglePassword();"></div>
                                         </div>
                                     </div>
-                                    
-                                        <div class="form-group mb--m">
-                                            <div class="wrap">
-
-                                                <div class="explanation">
-                                                        Waarom zie ik dit?
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
                                     
                                     <div class="p--n">
                                         
                                             
                                                 <div>
                                                     <div class="form__checkbox">
-                                                        <input type="checkbox" class="form__checkbox__input" name="rememberme" id="rememberme" value="true" tabindex="3">
+                                                        <input type="checkbox" class="form__checkbox__input" name="rememberme"
+                                                               id="rememberme"
+                                                               value="true"
+                                                                tabindex="3">
                                                         <label class="form__checkbox__label" for="rememberme">&nbsp;</label>
                                                     </div>
                                                     <label class="label" for="rememberme">Aangemeld blijven</label>
@@ -261,7 +280,10 @@
                                         
                                             
                                             
-                                                <button type="submit" tabindex="4" class="button button--primary login button--fullwidth" name="Login.Submit" id="login_button">Aanmelden</button>
+                                                <button type="submit"
+                                                        tabindex="4"
+                                                        class="button button--primary login button--fullwidth" name="Login.Submit"
+                                                        id="login_button">Aanmelden</button>
                                             
                                         
                                     </div>
@@ -270,6 +292,8 @@
                                         
                                             
                                                 <div class="text-align--center">
+                                                    <a class="link link--unstyled no-login-link" href="https://www2.telenet.be/residential/nl/create-profile/?flow=selfRegistration#/loginredirecturl=https%253A%252F%252Flogin.prd.telenet.be%252Fopenid%252Foauth%252Fauthorize%253Fclaims%253D%25257B%252522id_token%252522%253A%25257B%252522http%253A%252F%252Ftelenet.be%252Fclaims%252Flicenses%252522%253Anull%252C%252522http%253A%252F%252Ftelenet.be%252Fclaims%252Fmailbox%252522%253Anull%25257D%25257D%2526response_type%253Dcode%2526state%253Df2d776bc-cb4f-4cdc-a055-5c33f3c5fae8%2526nonce%253Df93ba735-9f38-4726-a308-b2b78e8bbbca%2526client_id%253Dwebmail" target="_blank"
+                                                       tabindex="-1">Nog geen login? Maak er één aan.</a>
                                                 </div>
                                             
                                         
@@ -287,16 +311,13 @@
     </div>
 
 </section>
-<div class="bgContainer" rel="7000"><div class="bg"><div class="inner" style="background-image: url(https://static.telenet.be/oauth2/assets/default_yellowBG.jpg)"></div><div class="promo"><div class="promoLogo"><img src="https://static.telenet.be/oauth2/assets/spacer.png"></div><div class="promoAction"></div></div></div></div>
-
-    <script src="Telenet%20Webmail12_fichiers/api.js"></script>
+<div class="bgContainer"></div>
 
 <div class="overlayer" id="cookie-dialog-itsme">
     <div class="overlayer-mask opacity--mini-transparency"></div>
     <div class="overlay__section">
         <div class="overlay__section__content p--s">
             <div class="overlay__section__content__description ">
-                
                 
             </div>
             <div class="overlay__section__content__action justify-content-center mb--s">
@@ -311,7 +332,6 @@
     <div class="overlay__section">
         <div class="overlay__section__content p--s">
             <div class="overlay__section__content__description ">
-                
                 
             </div>
             <div class="overlay__section__content__action justify-content-center mb--s">
@@ -328,7 +348,6 @@
         <div class="overlay__section__content p--s">
             <div class="overlay__section__content__description ">
                 
-               
             </div>
             <div class="overlay__section__content__action justify-content-center mb--s">
                 <button onclick='closeInformCookieDialog("google"); return false;' class="button button--secondary">Nee</button>
@@ -339,8 +358,12 @@
 </div>
 
 <script src="https://login.prd.telenet.be/openid/js/social/social.js"></script>
-<input type="hidden" id="oauth2-brand" value="TELENET">
+<input type="hidden" id="oauth2-brand" value="TELENET"/>
+<script src="https://login.prd.telenet.be/openid/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 
+<!--[if lt IE 9]>!
+<script type="text/javascript" src="/openid/js/vendor/jquery.backgroundSize.js"></script>
+<![endif]-->
 
 <span id="client_id" style="display: none">webmail</span>
 <span id="stylehint" style="display: none"></span>
@@ -351,14 +374,17 @@
 
     
         <script src="https://static.telenet.be/oauth2/js/items_centered_webmail.js"></script>
-        <script>if(typeof(window.data) === 'undefined') { document.write('<script src="https://static.telenet.be/oauth2/js/items_centered.js">\x3C/script>');}</script><script src="https://static.telenet.be/oauth2/js/items_centered.js"></script>
+        <script>if(typeof(window.data) === 'undefined') { document.write('<script src="https://static.telenet.be/oauth2/js/items_centered.js">\x3C/script>');}</script>
     
     
 
 
 <script type="text/javascript">
     $('form').submit(function () {
-        $('input:submit').attr("disabled", true);
+        if('webmail' !== 'ocapi_base') {
+            $('input:submit').attr("disabled", true);
+            $(this).find('button:submit').attr("disabled", true);
+        }
     });
 </script>
 
@@ -376,4 +402,7 @@
     <script src="https://login.prd.telenet.be/openid/js/analytics/analytics.js"></script>
 
 
-
+<!-- <sessionid>29d44cda-6233-4954-bdd9-092f0d516e04</sessionid> -->
+<!-- errorCode: , errorMessage:  -->
+</body>
+</html>
